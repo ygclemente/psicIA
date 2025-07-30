@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro PsicIA</title>
+    <link rel="stylesheet" href="/src/css/cadastro.css">
+</head>
+<body>
+    <div class="boxchat">
+        <div class="login-box">
+            <h2>CADASTRO</h2>
+            <div class="input-group">
+                <label for="new-username">Usuário</label>
+                <input type="text" id="new-username" placeholder="Escolha um nome de usuário">
+            </div>
+
+
+<div class="input-group">
+  <label for="genero">Gênero</label>
+  <select id="genero" name="genero" class="select-genero">
+    <option value="">Selecione...</option>
+    <option value="feminino">Feminino</option>
+    <option value="masculino">Masculino</option>
+    <option value="neutro">Prefiro não dizer</option>
+  </select>
+</div>
+
+
+            <div class="input-group">
+              <div class="input-group"><label for="email">Email</label>
+            <input type="email" id="email" placeholder="Digite seu email">
+            </div>
+            <div class="input-group">
+                <label for="new-password">Senha</label>
+                <input type="password" id="new-password" placeholder="Crie uma senha">
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirmar Senha</label>
+                <input type="password" id="confirm-password" placeholder="Repita a senha">
+            </div>
+            <button class="botao" onclick="cadastrar()">Cadastrar</button>
+            <div class="switch-link">
+                <p>Já tem uma conta? <a href="/public/login.html">Voltar ao login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function cadastrar() {
+            const newUser = document.getElementById('new-username').value.trim();
+            const newPass = document.getElementById('new-password').value.trim();
+            const confirmPass = document.getElementById('confirm-password').value.trim();
+
+            if (newUser === "" || newPass === "" || confirmPass === "") {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            if (newPass !== confirmPass) {
+                alert("As senhas não coincidem.");
+                return;
+            }
+
+            alert("Cadastro realizado com sucesso!");
+            window.location.href = "login.html";
+        }
+        
+    </script>
+</body>
+</html>
